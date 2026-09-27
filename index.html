@@ -23,12 +23,17 @@
             z-index: 0;
         }
 
-        /* 左上角头像，点击回主页 */
-        .home-link {
+        .top-bar {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .home-link {
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -37,6 +42,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             display: block;
+            flex-shrink: 0;
         }
 
         .home-link img {
@@ -51,13 +57,33 @@
             border-color: rgba(109, 191, 232, 0.6);
             box-shadow: 0 6px 18px rgba(109, 191, 232, 0.4);
         }
+
+        .top-text {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            font-size: 13px;
+            color: #8a9bb0;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        @media (max-width: 620px) {
+            .top-text {
+                font-size: 12px;
+                white-space: normal;
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <a class="home-link" href="index.html" title="返回主页">
-        <img src="picture/picture.webp" alt="BlueCode">
-    </a>
+    <div class="top-bar">
+        <a class="home-link" href="https://bluecode-1273514.github.io/profile/" title="返回主页">
+            <img src="picture/picture.webp" alt="BlueCode">
+        </a>
+        <span class="top-text">看那片美丽的星空！可这些“星星”没有一颗是属于我的……</span>
+    </div>
 
     <div id="stars"></div>
 
